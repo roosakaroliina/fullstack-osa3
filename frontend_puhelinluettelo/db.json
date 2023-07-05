@@ -1,0 +1,34 @@
+{
+  "persons": [
+    {
+      "name": "Roosa",
+      "number": "0304020202",
+      "id": 1
+    },
+    {
+      "name": "Oona",
+      "number": "04050302",
+      "id": 2
+    },
+    {
+      "name": "Maria",
+      "number": "0203020202",
+      "id": 3
+    },
+    {
+      "name": "Eemil",
+      "number": "0293848493",
+      "id": 4
+    },
+    {
+      "name": "Maija",
+      "number": "030495837",
+      "id": 5
+    },
+    {
+      "name": "Edvard",
+      "number": "03030303",
+      "id": 6
+    }
+  ]
+}
