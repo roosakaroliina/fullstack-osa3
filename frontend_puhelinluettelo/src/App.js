@@ -78,15 +78,14 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState(null)
 
 
-
-
-  useEffect(() => {
+  const hook = () => {
     personService
       .getAll()
-      .then(initialPersons => {
-        setPersons(initialPersons)
+      .then(response => {
+        setPersons(response)
       })
-  }, [])
+  }
+  useEffect(hook, [])
 
   const addPerson = (event) => {
     event.preventDefault()
@@ -133,10 +132,14 @@ const App = () => {
       .create(personObject)
       .then(returnedPerson => {
         setPersons(persons.concat(returnedPerson))
+        setMessage(
+          `Added ${personObject.name}`
+        )
       })
-    setMessage(
-      `Added ${personObject.name}`
-    )
+      .catch(error => {
+        setErrorMessage(error.response.data.error)
+        console.log("error message: " + error.response.data.error)
+      })
     setTimeout(() => {
       setMessage(null)
     }, 5000)
