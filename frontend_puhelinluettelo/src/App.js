@@ -135,14 +135,16 @@ const App = () => {
         setMessage(
           `Added ${personObject.name}`
         )
+        setTimeout(() => {
+          setMessage(null)
+        }, 5000)
       })
       .catch(error => {
         setErrorMessage(error.response.data.error)
-        console.log("error message: " + error.response.data.error)
+        setTimeout(() => {
+          setMessage(null)
+        }, 5000)
       })
-    setTimeout(() => {
-      setMessage(null)
-    }, 5000)
     setNewName('')
     setNewNumber('')
   }
